@@ -1,5 +1,5 @@
 {
-    "name": "snake",
+    "name": "microbit-v5",
     "description": "",
     "dependencies": {
         "core": "*",
