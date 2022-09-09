@@ -42,8 +42,6 @@ const codes = [
     ['000011', 'SANTOS'],
 ]
 
-
-
 input.onButtonPressed(Button.A, function () {
     morseString += "0"
     basic.showLeds(`
@@ -85,14 +83,11 @@ const showText = (e: string) => {
     basic.clearScreen()
 }
 
-
-
-
 input.onGesture(Gesture.Shake, () => {
     if (morseString == '') {
     } else {
 
-    checkForMatch()
+        checkForMatch()
     }
 
 })
