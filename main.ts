@@ -1,15 +1,34 @@
-// const spritePos = {
-//     x: 0,
-//     y: 0
-// };
+// Morsecode vertalen
+let morseString = ""
 
-// let {x, y} = spritePos;
-// let snake = game.createSprite(x, y)
-// loops.everyInterval(500,() => {
-//     snake.ifOnEdgeBounce(() => {
-        
-//     })
-//     snake.move(1)
+input.onButtonPressed(Button.A, function () {
+    morseString += "0"
+    basic.showLeds(`
+    .....
+    .....
+    ..#..
+    .....
+    .....
+    `)
+    basic.pause(1500)
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    morseString += "1"
+    basic.showLeds(`
+    .....
+    .....
+    .###.
+    .....
+    .....
+    `)
+    basic.pause(1500)
+    basic.clearScreen()
+})
 
-
-// })
+input.onGesture(Gesture.Shake,() => {
+    basic.showString(morseString)
+    morseString = ''
+    basic.pause(3000)
+    basic.clearScreen()
+})
