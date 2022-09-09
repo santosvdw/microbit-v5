@@ -1,7 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="K]LXgZV:.(%HqkGNIXCJ" x="0" y="0"><statement name="HANDLER"><block type="radio_datagram_send" id="2HQO9J*TbKbv(L^X06D*"><value name="value"><shadow type="math_number" id="T(3?4p(`BvCf#Wda#^E!"><field name="NUM">0</field></shadow></value></block></statement></block><block type="device_forever" id="2S1*x:{6S[D*Ib*Jq/Ym" x="406" y="94"></block><block type="radio_on_number_drag" id="8y}jm{Y:~`Fi(.f]*8d;" x="16" y="214"><value name="HANDLER_DRAG_PARAM_receivedNumber"><shadow type="argument_reporter_number" id="yW::IJFt~UG/YR}.E|89"><field name="VALUE">receivedNumber</field></shadow></value><statement name="HANDLER"><block type="device_show_leds" id="5)Pgbc@e+1HHTuj{9zml"><field name="LEDS">`
-        # # # # # 
-        # # # # # 
-        # # # # # 
-        . . . . . 
-        . . . . .
-        `</field></block></statement></block></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="K]LXgZV:.(%HqkGNIXCJ" x="0" y="0"></block></xml>
