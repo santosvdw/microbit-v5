@@ -1,7 +1,7 @@
 // Morsecode vertalen
 let morseString = "";
 
-const codes = [ 
+const codes = [
     ['01', 'A'],
     ['1000', 'B'],
     ['1010', 'C'],
@@ -72,31 +72,27 @@ input.onButtonPressed(Button.B, function () {
 const checkForMatch = () => {
     for (let i = 0; i < codes.length; i++) {
         if (codes[i][0] == morseString) {
-            basic.showString(codes[i][1])
-        } else if (morseString == '') {
-            handleError()
+            showText(codes[i][1])
         } else {
-            handleError()
         }
     }
     morseString = ''
 }
 
-const handleError = () => {
-    basic.showLeds(`
-            #...#
-            .#.#.
-            ..#..
-            .#.#.
-            #...#
-            `)
+const showText = (e: string) => {
+    basic.showString(e)
+    basic.pause(1500)
     basic.clearScreen()
-    basic.pause(1000)
-    morseString = ''
-
 }
 
+
+
+
 input.onGesture(Gesture.Shake, () => {
+    if (morseString == '') {
+    } else {
+
     checkForMatch()
-   
+    }
+
 })
