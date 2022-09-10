@@ -1,5 +1,6 @@
 // Morsecode vertalen
-let morseString = "";
+let morseString: string = "";
+let error: boolean = false;
 
 const codes = [
     ['01', 'A'],
@@ -40,6 +41,8 @@ const codes = [
     ['000111000', 'SOS'],
     ['101001', 'CHARLEY'],
     ['000011', 'SANTOS'],
+    ['00100010', 'INFORMATICA'],
+    ['111000110', 'OSG']
 ]
 
 input.onButtonPressed(Button.A, function () {
@@ -51,6 +54,7 @@ input.onButtonPressed(Button.A, function () {
     .....
     .....
     `)
+    music.playTone(Note.F4, music.beat(BeatFraction.Quarter),)
     basic.pause(300)
     basic.clearScreen()
 })
@@ -63,6 +67,7 @@ input.onButtonPressed(Button.B, function () {
     .....
     .....
     `)
+    music.playTone(Note.F4, music.beat(BeatFraction.Half))
     basic.pause(300)
     basic.clearScreen()
 })
@@ -70,24 +75,36 @@ input.onButtonPressed(Button.B, function () {
 const checkForMatch = () => {
     for (let i = 0; i < codes.length; i++) {
         if (codes[i][0] == morseString) {
+            error = false
             showText(codes[i][1])
+            break;
         } else {
+            error = true
         }
+    }
+
+    if (error) {
+        basic.showIcon(IconNames.No)
+        music.startMelody(music.builtInMelody(Melodies.Wawawawaa), MelodyOptions.Once)
+        basic.pause(1000)
+        basic.clearScreen()
     }
     morseString = ''
 }
 
 const showText = (e: string) => {
     basic.showString(e)
-    basic.pause(1500)
+    music.playTone(Note.FSharp5, 500)
+    basic.pause(1000)
     basic.clearScreen()
 }
 
 input.onGesture(Gesture.Shake, () => {
     if (morseString == '') {
+        basic.showIcon(IconNames.No)
+        basic.pause(2000)
+        basic.clearScreen()
     } else {
-
         checkForMatch()
     }
-
 })
