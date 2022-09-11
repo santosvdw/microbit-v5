@@ -72,11 +72,21 @@ input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
 })
 
+input.onGesture(Gesture.Shake, () => {
+    if (morseString == '') {
+        basic.showIcon(IconNames.No)
+        basic.pause(2000)
+        basic.clearScreen()
+    } else {
+        checkForMatch()
+    }
+})
+
 const checkForMatch = () => {
-    for (let i = 0; i < codes.length; i++) {
-        if (codes[i][0] == morseString) {
+    for (const code of codes) {
+        if (code[0] == morseString) {
             error = false
-            showText(codes[i][1])
+            showText(code[1])
             break;
         } else {
             error = true
@@ -99,12 +109,3 @@ const showText = (e: string) => {
     basic.clearScreen()
 }
 
-input.onGesture(Gesture.Shake, () => {
-    if (morseString == '') {
-        basic.showIcon(IconNames.No)
-        basic.pause(2000)
-        basic.clearScreen()
-    } else {
-        checkForMatch()
-    }
-})
