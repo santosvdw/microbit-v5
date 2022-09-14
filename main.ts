@@ -72,7 +72,7 @@ input.onButtonPressed(Button.B, function () {
     .....
     `)
     music.playTone(Note.F4, music.beat(BeatFraction.Half))
-    // Dan wordt er een . op het scherm weergeven en wordt er een geluid afgespeeld
+    // Dan wordt er een - op het scherm weergeven en wordt er een geluid afgespeeld
     basic.pause(300)
     basic.clearScreen()
     // Na 0.3 sec worden alle lichtjes uitgezet
