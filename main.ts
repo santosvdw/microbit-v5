@@ -105,7 +105,7 @@ const checkForMatch = () => {
             break;
             // De loop wordt afgebroken omdat er een match is gevonden.
         } else {
-            // De morsecode is correct ingevoerd
+            // De morsecode is incorrect ingevoerd
             error = true
             // Als er de hele loop geen match is gevonden wordt de error variabele true. 
         }
