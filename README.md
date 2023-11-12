@@ -1,4 +1,4 @@
-## Een project van [@santosvdw](https://github.com/santosvdw) en [@charlotteabcouwer](https://github.com/charlotteabcouwer)
+## Een project van [@santosvdw](https://github.com/santosvdw)
 
 > Open deze pagina op [https://santosvdw.github.io/microbit-v5/](https://santosvdw.github.io/microbit-v5/)
 >
